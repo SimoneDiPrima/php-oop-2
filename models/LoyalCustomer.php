@@ -9,9 +9,11 @@ class LoyalCustomer {
     public $favouriteAnimals;
     protected $averageExpense;
     protected $invoices;
+    protected $price;
+    protected $discount;
 
 
-    public function __construct($firstName,$lastName,$phoneNumber,$age,$address,$favouriteAnimals,$averageExpense,$invoices){
+    public function __construct($firstName,$lastName,$phoneNumber,$age,$address,$favouriteAnimals,$averageExpense,$invoices,$discount = '20%'){
         $this->setFirstName($firstName);
         $this->setLastName($lastName);
         $this->setPhoneNumber($phoneNumber);
@@ -20,6 +22,7 @@ class LoyalCustomer {
         $this->setFavouriteAnimals($favouriteAnimals);
         $this->setAverageExpense($averageExpense);
         $this->setInvoices($invoices);
+        $this->setDiscount($discount);
     }
 
     public function setFirstName(){
@@ -122,6 +125,30 @@ class LoyalCustomer {
     }
     public function getInvoices(){
         return $this->invoices;
+    }
+    protected function setPrice(){
+        if(isnumeric($price)){
+            return $this->price = $price;
+        }
+        else{
+            return false;
+        }
+
+    }
+    protected function getPrice(){
+        return $this->price;
+    }
+    protected function setDiscount(){
+        if(isnumeric($price)){
+            return $this->price = ($price*100/20);
+        }
+        else{
+            return false;
+        }
+        
+    }
+    protected function getDiscount(){
+        return $this->discount;
     }
 
 }

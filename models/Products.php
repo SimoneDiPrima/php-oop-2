@@ -40,7 +40,7 @@ class Products {
     public function getCategories(){
         return $this->categories;
     }
-    private function setPrice(){
+    protected function setPrice(){
         if(isnumeric($price)){
             return $this->price = $price;
         }
@@ -49,7 +49,7 @@ class Products {
         }
 
     }
-    private function getPrice(){
+    protected function getPrice(){
         return $this->price;
     }
     private function setEan(){
