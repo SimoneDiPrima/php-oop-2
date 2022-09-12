@@ -89,5 +89,5 @@ class Products {
     private function getDescription(){
         return $this->description;
     }
-   
+ 
 }
