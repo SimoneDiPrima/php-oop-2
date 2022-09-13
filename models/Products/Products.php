@@ -40,7 +40,7 @@ class Products {
     public function getCategories(){
         return $this->categories;
     }
-    protected function setPrice(){
+    public function setPrice(){
         if(isnumeric($price)){
             return $this->price = $price;
         }
@@ -49,22 +49,22 @@ class Products {
         }
 
     }
-    protected function getPrice(){
+    public function getPrice(){
         return $this->price;
     }
-    private function setEan(){
-        if(isnumeric($price) && $price >= 0){
-            return $this->price = $price;
+    public function setEan(){
+        if(isnumeric($ean)){
+            return $this->ean->uniqid();
         }
         else{
             return false;
         }
 
     }
-    private function getEan(){
+    public function getEan(){
         return $this->ean;
     }
-    private function setInternalCode(){
+     function setInternalCode(){
         if(isnumeric($internal_code) && $internal_code >= 0){
             return $this->internal_code = $internal_code;
         }
@@ -73,12 +73,12 @@ class Products {
         }
 
     }
-    private function getInternalCode(){
+    public function getInternalCode(){
         return $this->internal_code;
         
     }
-    private function setDescription(){
-        if(!isnumeric($description)){
+    public function setDescription(){
+        if(!isnumeric($description) && ($description) > ''){
             return $this->description = $description;
         }
         else{
@@ -86,7 +86,7 @@ class Products {
         }
         
     }
-    private function getDescription(){
+    public function getDescription(){
         return $this->description;
     }
  
