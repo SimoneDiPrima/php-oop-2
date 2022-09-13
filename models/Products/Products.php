@@ -5,89 +5,53 @@ class Products {
     protected $price;
     protected $ean;
     protected $internal_code;
-    protected $description;
 
-    public function __construct($name,$categories,$ean,$internal_code){
+    public function __construct($name,$categories,$price,$ean,$internal_code,){
        $this->setName($name);
        $this->setCategories($categories);
        $this->setPrice($price);
        $this->setEan($ean);
        $this->setInternalCode($internal_code);
-       $this->setDescription($description);
     }
 
-    public function setName(){
-        if(!isnumeric($name)){
+    public function setName($name){
             return $this->name = $name;
-        }
-        else{
-            return false;
-        }
-
     }
-    public function getName(){
+    public function getName($name){
         return $this->name;
     }
-    public function setCategories(){
-        if(!isnumeric($categories)){
+    public function setCategories($categories){
+        
             return $this->categories = $categories;
-        }
-        else{
-            return false;
-        }
 
     }
-    public function getCategories(){
+    public function getCategories($categories){
         return $this->categories;
     }
-    public function setPrice(){
-        if(isnumeric($price)){
+    public function setPrice($price){
+       
             return $this->price = $price;
-        }
-        else{
-            return false;
-        }
 
     }
-    public function getPrice(){
+    public function getPrice($price){
         return $this->price;
     }
-    public function setEan(){
-        if(isnumeric($ean)){
-            return $this->ean->uniqid();
-        }
-        else{
-            return false;
-        }
+    public function setEan($ean){
+       
+            return $this->ean = $ean;
 
     }
-    public function getEan(){
+    public function getEan($ean){
         return $this->ean;
     }
-     function setInternalCode(){
-        if(isnumeric($internal_code) && $internal_code >= 0){
+     function setInternalCode($internal_code){
+        
             return $this->internal_code = $internal_code;
-        }
-        else{
-            return false;
-        }
 
     }
-    public function getInternalCode(){
+    public function getInternalCode($internal_code){
         return $this->internal_code;
         
-    }
-    public function setDescription(){
-        if(!isnumeric($description) && ($description) > ''){
-            return $this->description = $description;
-        }
-        else{
-            return false;
-        }
-        
-    }
-    public function getDescription(){
-        return $this->description;
     }
  
 }

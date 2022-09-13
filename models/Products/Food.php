@@ -1,53 +1,39 @@
 <?php 
 require_once __DIR__.'/Products.php';
-class Food extends Products {
-    $weight;
-    $kindoffood;
-    $expiration;
-    $ingredients;
-     public function __construct($name,$categories,$ean,$internal_code,$weight, $kindoffood,$expiration,$ingredients)
+class Food extends Products
+ {
+   protected $kindoffood;
+   protected $expiration;
+   protected $ingredients;
+     public function __construct($name,$categories,$ean,$price,$internal_code,$kindoffood,$expiration,$ingredients)
     {
-        parent:: __construct($name,$categories,$ean,$internal_code);
-        $this->setWeight($weight);
+        parent:: __construct($name,$categories,$price,$ean,$internal_code);
+      
         $this->setkindOfFood($kindoffood);
         $this->setExpiration($expiration);
-        $this->getIngredients($ingredients);
+        $this->setIngredients($ingredients);
     }
 
-
-    public function setWeight(){
-        if(isnumeric($weight) && ($weight)>0 ){
-            return $this->weight = $weight;
-        }
+    public function setkindOfFood($kindoffood){
+            return $this->kindoffood = $kindoffood;
     }
-    public function getWeight(){
-        return $this->weight;
-    }
-    public function setkindOfFood(){
-        if(!isnumeric($kindOffood) && ($kindOffood) > '' ){
-            return $this->kindOffood = $kindOffood;
-        }
-
-    }
-    public function getkindOfFood(){
+    public function getkindOfFood($kindoffood){
         return $this->kindoffood;
     }
-    public function setExpiration(){
-        if(!isnumeric($)){
-            return $this->kindOfFood = $kindOfFood;
-        }
+    public function setExpiration($expiration){
+      
+            return $this->expiration = $expiration;
 
     }
     public function getExpiration($expiration){
         return $this->expiration;
     }
     public function setIngredients($ingredients){
-        if(!isnumeric($ingredients) && ($ingredients) > '' ){
-            return $this->kindOfFood = $kindOfFood;
-        }
-
+       
+            return $this->ingredients = $ingredients;
+    
     }
-    public function getIngredients(){
+    public function getIngredients($ingredients){
         return $this->ingredients;
     }
    
