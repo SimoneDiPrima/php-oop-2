@@ -3,13 +3,15 @@ require_once __DIR__.'/Products.php';
 class Food extends Products {
     $weight;
     $kindoffood;
-    $state;
-     public function __construct($name,$categories,$ean,$internal_code)
+    $expiration;
+    $ingredients;
+     public function __construct($name,$categories,$ean,$internal_code,$weight, $kindoffood,$expiration,$ingredients)
     {
         parent:: __construct($name,$categories,$ean,$internal_code);
-        $this->weight = $weight;
-        $this->kindoffood = $kindoffood;
-        $this->state =  $state;
+        $this->setWeight($weight);
+        $this->setkindOfFood($kindoffood);
+        $this->setExpiration($expiration);
+        $this->getIngredients($ingredients);
     }
 
 
@@ -22,24 +24,32 @@ class Food extends Products {
         return $this->weight;
     }
     public function setkindOfFood(){
-        if(!isnumeric($kindOfFood) && ($kindOfFood) > '' ){
-            return $this->kindOfFood = $kindOfFood;
+        if(!isnumeric($kindOffood) && ($kindOffood) > '' ){
+            return $this->kindOffood = $kindOffood;
         }
 
     }
     public function getkindOfFood(){
         return $this->kindoffood;
     }
-    public function setState(){
-        if($state = 1){
-            return true;
+    public function setExpiration(){
+        if(!isnumeric($)){
+            return $this->kindOfFood = $kindOfFood;
         }
-        else{
-            return false;
+
+    }
+    public function getExpiration($expiration){
+        return $this->expiration;
+    }
+    public function setIngredients($ingredients){
+        if(!isnumeric($ingredients) && ($ingredients) > '' ){
+            return $this->kindOfFood = $kindOfFood;
         }
+
     }
-    public function getState(){
-        return $this->state;
+    public function getIngredients(){
+        return $this->ingredients;
     }
+   
 
 }
