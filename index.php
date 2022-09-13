@@ -8,6 +8,7 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta. -->
 include_once __DIR__ .'./models/Products/Food.php';
 include_once __DIR__ .'./models/Products/Cart.php';
 include_once __DIR__ .'./models/Customer.php';
+include_once __DIR__ .'./models/Products/Address.php';
 
 
 
@@ -18,3 +19,6 @@ var_dump($prodotto);
 $cliente = new Customer();
 $cliente->addtoCart($prodotto);
 var_dump($cliente);
+
+$indirizzo  = new Address('Simone','Di Prima','via monaco simone 1/11',"12012","GEnova","Italia");
+var_dump($indirizzo);
